@@ -1,4 +1,4 @@
-package co.com.bancolombia.jpa;
+package co.com.bancolombia.jpa.actor;
 
 import co.com.bancolombia.jpa.entities.ActorEntity;
 import co.com.bancolombia.jpa.helper.AdapterOperations;
@@ -7,15 +7,15 @@ import org.reactivecommons.utils.ObjectMapper;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class JPARepositoryAdapter extends AdapterOperations<
+public class JPAActorRepositoryAdapter extends AdapterOperations<
         Actor/* change for domain model */,
         ActorEntity/* change for adapter model */,
         Long,
-        JPARepository>
+        JpaActorRepository>
 // implements ModelRepository from domain
 {
 
-    public JPARepositoryAdapter(JPARepository repository, ObjectMapper mapper) {
+    public JPAActorRepositoryAdapter(JpaActorRepository repository, ObjectMapper mapper) {
         /**
          *  Could be use mapper.mapBuilder if your domain model implement builder pattern
          *  super(repository, mapper, d -> mapper.mapBuilder(d,ObjectModel.ObjectModelBuilder.class).build());
