@@ -2,9 +2,11 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-undertow'
     implementation project(':usecase')
     implementation project(':model')
+    implementation project(':jpa-repository')
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'io.micrometer:micrometer-registry-prometheus'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
 }
 
 
