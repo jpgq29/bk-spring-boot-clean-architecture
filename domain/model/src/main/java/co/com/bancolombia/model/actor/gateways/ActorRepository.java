@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface ActorRepository {
     List<Actor> getAll();
+    Actor save(Actor actor);
 }
