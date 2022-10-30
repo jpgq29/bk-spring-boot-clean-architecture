@@ -1,20 +1,24 @@
 package co.com.bancolombia.api;
+
+import co.com.bancolombia.jpa.actor.dto.ActorResponse;
+import co.com.bancolombia.jpa.common.IConversion;
+import co.com.bancolombia.usecase.actor.ActorUseCase;
 import lombok.AllArgsConstructor;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
+@ResponseBody
 @RequestMapping(value = "/api", produces = MediaType.APPLICATION_JSON_VALUE)
 @AllArgsConstructor
 public class ApiRest {
-//    private final MyUseCase useCase;
-
+    private final ActorUseCase service;
+    private final IConversion conversion;
 
     @GetMapping(path = "/path")
-    public String commandName() {
-//      return useCase.doAction();
-        return "Hello World";
+    public List<ActorResponse> commandName() {
+        return conversion.listConversion(service.getAll());
     }
 }
