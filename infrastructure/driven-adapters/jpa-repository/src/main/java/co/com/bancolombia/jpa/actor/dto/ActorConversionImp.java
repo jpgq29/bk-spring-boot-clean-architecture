@@ -17,4 +17,9 @@ public class ActorConversionImp implements IConversion<Actor, ActorResponse> {
     public List<ActorResponse> listConversion(List<Actor> actor) {
         return actor.stream().map(dato -> mapper.map(dato,ActorResponse.class)).collect(Collectors.toList());
     }
+
+    @Override
+    public ActorResponse conversion(Actor data) {
+        return mapper.map(data,ActorResponse.class);
+    }
 }
