@@ -4,13 +4,12 @@ import co.com.bancolombia.model.actor.Actor;
 import co.com.bancolombia.model.actor.gateways.ActorRepository;
 import lombok.RequiredArgsConstructor;
 
-import java.util.List;
-
 @RequiredArgsConstructor
-public class ActorUseCase {
-    private final ActorRepository repository;
-    public List<Actor> getAll(){
-        return repository.getAll();
+public class ActorUseCase<T, E> {
+    private final ActorRepository<T, E> repository;
+    public T getAll(E pageable){
+        System.out.println(repository.getAll(pageable));
+        return repository.getAll(pageable);
     }
     public Actor save(Actor actor){return repository.save(actor);}
 }

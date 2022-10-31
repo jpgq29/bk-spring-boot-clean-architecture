@@ -2,9 +2,7 @@ package co.com.bancolombia.model.actor.gateways;
 
 import co.com.bancolombia.model.actor.Actor;
 
-import java.util.List;
-
-public interface ActorRepository {
-    List<Actor> getAll();
+public interface ActorRepository<T, E> {
+    T getAll(E pageable);
     Actor save(Actor actor);
 }
