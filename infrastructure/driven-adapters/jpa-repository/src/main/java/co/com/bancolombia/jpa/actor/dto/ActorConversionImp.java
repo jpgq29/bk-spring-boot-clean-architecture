@@ -4,12 +4,14 @@ import co.com.bancolombia.jpa.common.IConversion;
 import co.com.bancolombia.model.actor.Actor;
 import org.reactivecommons.utils.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@Primary
 public class ActorConversionImp implements IConversion<Actor, ActorResponse> {
     @Autowired
     private ObjectMapper mapper;
