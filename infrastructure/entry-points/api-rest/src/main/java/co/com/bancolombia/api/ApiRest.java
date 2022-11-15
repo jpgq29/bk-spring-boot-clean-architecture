@@ -6,6 +6,7 @@ import co.com.bancolombia.jpa.common.IConversion;
 import co.com.bancolombia.model.actor.Actor;
 import co.com.bancolombia.usecase.actor.ActorUseCase;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -21,7 +22,7 @@ import javax.validation.Valid;
 @AllArgsConstructor
 public class ApiRest {
     private final ActorUseCase<Page<Actor>, Pageable> service;
-
+    @Autowired
     private final IConversion conversion;
 
     @GetMapping
