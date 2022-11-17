@@ -12,5 +12,5 @@ public interface JpaFilmRepository extends CrudRepository<
         QueryByExampleExecutor<FilmEntity/* change for adapter model */> {
 
     @Transactional(readOnly = true)
-    Page<FilmEntity> findAll(Pageable pageable);
+    <T, E extends Pageable> Page<T> findAllBy(E pageable, Class<T> types);
 }

@@ -29,6 +29,6 @@ public class JPAFilmRepositoryAdapter extends AdapterOperations<
 
     @Override
     public Page<Film> getAll(Pageable pageable) {
-        return super.repository.findAll(pageable).map(data -> mapper.map(data,Film.class));
+        return super.repository.findAllBy(pageable, FilmEntity.class).map(data -> mapper.map(data,Film.class));
     }
 }
