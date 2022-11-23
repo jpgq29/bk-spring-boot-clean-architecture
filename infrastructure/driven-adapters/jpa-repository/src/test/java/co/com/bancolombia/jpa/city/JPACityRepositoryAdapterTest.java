@@ -78,4 +78,16 @@ class JPACityRepositoryAdapterTest {
 
         Assertions.assertEquals(projection.getCity(), pageResult.getContent().get(0).getCity());
     }
+
+    @Test
+    void save(){
+        City city = new City().toBuilder().cityId(33L).city("Bucaramanga").build();
+
+        when(repository.save(any(City.class))).thenReturn(city);
+
+        City response = service.save(city);
+
+        Assertions.assertNotNull(response);
+        Assertions.assertEquals(33L,response.getCityId());
+    }
 }
