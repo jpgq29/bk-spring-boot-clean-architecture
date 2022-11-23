@@ -1,6 +1,7 @@
 package co.com.bancolombia.jpa.city;
 
 import co.com.bancolombia.jpa.entities.CityEntity;
+import co.com.bancolombia.model.city.City;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.CrudRepository;
@@ -13,4 +14,6 @@ public interface JpaCityRepository extends CrudRepository<
 
     @Transactional(readOnly = true)
     <T> Page<T> findAllBy(Pageable pageable, Class<T> type);
+
+    City save(City entity);
 }

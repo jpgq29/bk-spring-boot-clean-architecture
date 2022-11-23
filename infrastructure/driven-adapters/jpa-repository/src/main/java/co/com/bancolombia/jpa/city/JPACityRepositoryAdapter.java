@@ -33,4 +33,9 @@ public class JPACityRepositoryAdapter extends AdapterOperations<
     public Page<City> getAll(Pageable pageable) {
         return super.repository.findAllBy(pageable, ICityProjection.class).map(data -> mapper.map(data, City.class));
     }
+
+    @Override
+    public City save(City entity){
+        return super.repository.save(entity);
+    }
 }
